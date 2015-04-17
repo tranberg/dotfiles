@@ -22,7 +22,7 @@ set showmatch       " show matching brackets
 " Colors!
 set t_Co=256        " 265 colors
 syntax enable       " enable syntax highlighting
-colo gruvbox        " color scheme
+colo gruvbox        " color scheme, requires separate installation of gruvbox
 
 " Fixing colors in gruvbox
 if !has("gui_running")
