@@ -1,28 +1,31 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This file contains configurations for Vim.
-" The setup is optimized for Python and LaTeX.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" This file contains my personal configuration of Vim.
+" It is optimized for Python and LaTeX using Danish keyboard layout.
 "
 " Author: Bo Tranberg
 " Contact: http://tberg.dk
-" Last modified: April 17, 2015
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Last Modified: July 11, 2015
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Basics
-set spell           " spell check
+set spell           " Spell check
 set spelllang=en_us " American English
 set nocp            " Enables a lot of features
-set number          " show line numbers
-set textwidth=80    " line break at 80 characters
+set number          " Show line numbers
+set textwidth=80    " Define point of line break
 set ruler           " Shows ruler for cursor
-set sc              " show command
+set sc              " Show command
 set wildmenu        " Show the wild menu
-set showmatch       " show matching brackets
+set showmatch       " Show matching brackets
+
 
 " Colors!
 set t_Co=256        " 265 colors
-syntax enable       " enable syntax highlighting
-colo gruvbox        " color scheme, requires separate installation of gruvbox
+syntax enable       " Enable syntax highlighting
+colo gruvbox        " Color scheme
+" Requires installation of gruvbox, see: https://github.com/morhetz/gruvbox
+" Type :colo <tab> for a selection of built-in color schemes.
 
 " Fixing colors in gruvbox
 if !has("gui_running")
@@ -30,12 +33,15 @@ if !has("gui_running")
 endif
 set background=dark " dark background
 
-" Indentation and stuff
-filetype indent on  " automatic indentation
-set tabstop=4       " size of tab
-set expandtab       " insert space in stead of tab
-set shiftwidth=4    " indentation of text
 
+" Indentation and stuff
+filetype indent on  " Automatic indentation
+set tabstop=4       " Size of tab
+set expandtab       " Insert space in stead of tab
+set shiftwidth=4    " Indentation of text
+
+
+" Python stuff
 " Indentation for Python
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
@@ -45,6 +51,8 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 " Disable spelling in .py files
 autocmd BufRead *.py set nospell
 
+
+" LaTeX stuff
 " This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
@@ -75,3 +83,10 @@ autocmd Filetype tex setlocal nofoldenable
 
 " Enable wrapping but without linebreak in .tex files
 autocmd Filetype tex set wrap linebreak nolist textwidth=0 wrapmargin=0 formatoptions+=l
+
+" Key mappings
+" Go to first tab on tg, like gt goes to next tab
+:nmap tg :tabfirst<Enter>
+" Jump by paragraph with a Danish keyboard layout
+:nmap å {
+:nmap ø }
