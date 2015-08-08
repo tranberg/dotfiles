@@ -45,9 +45,6 @@ set shiftwidth=4    " Indentation of text
 " Indentation for Python
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-" Remove trailing white spaces when saving *.py files
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-
 " Disable spelling in .py files
 autocmd BufRead *.py set nospell
 
@@ -84,9 +81,21 @@ autocmd Filetype tex setlocal nofoldenable
 " Enable wrapping but without linebreak in .tex files
 autocmd Filetype tex set wrap linebreak nolist textwidth=0 wrapmargin=0 formatoptions+=l
 
+
 " Key mappings
 " Go to first tab on tg, like gt goes to next tab
 :nmap tg :tabfirst<Enter>
 " Jump by paragraph with a Danish keyboard layout
 :nmap å {
 :nmap ø }
+
+
+" Remove trailing whitespaces on saving
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
