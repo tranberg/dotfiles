@@ -4,7 +4,6 @@
 "
 " Author: Bo Tranberg
 " Contact: http://tberg.dk
-" Last Modified: July 11, 2015
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -40,6 +39,9 @@ set tabstop=4       " Size of tab
 set expandtab       " Insert space in stead of tab
 set shiftwidth=4    " Indentation of text
 
+" Special indentation
+autocmd BufRead *.yml set tabstop=2 shiftwidth=2
+autocmd BufRead *.tf set tabstop=2 shiftwidth=2
 
 " Python stuff
 " Indentation for Python
