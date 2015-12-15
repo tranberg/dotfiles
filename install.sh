@@ -11,7 +11,9 @@ cd ~/
 # Create symlinks to dotfiles
 for file in .vimrc .tmux.conf
 do
-    rm $file
+    if [ -f $file ]; then
+        rm $file
+    fi
     cp -vs $path/$file .
 done
 
