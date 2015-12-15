@@ -1,11 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This file contains my personal configuration of Vim.
+" This file contains my personal configuration of vim.
 " It is optimized for Python and LaTeX using Danish keyboard layout.
 "
 " Author: Bo Tranberg
 " Contact: http://tberg.dk
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 " Basics
 set spell           " Spell check
@@ -42,6 +41,7 @@ set shiftwidth=4    " Indentation of text
 " Special indentation
 autocmd BufRead *.yml set tabstop=2 shiftwidth=2
 autocmd BufRead *.tf set tabstop=2 shiftwidth=2
+
 
 " Python stuff
 " Indentation for Python
@@ -90,6 +90,10 @@ autocmd Filetype tex set wrap linebreak nolist textwidth=0 wrapmargin=0 formatop
 " Jump by paragraph with a Danish keyboard layout
 :nmap å {
 :nmap ø }
+
+" Jump by word in insert mode
+:inoremap <C-H> <C-\><C-O>b
+:inoremap <C-L> <C-\><C-O>w
 
 
 " Remove trailing whitespaces on saving
