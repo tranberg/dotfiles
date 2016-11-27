@@ -22,3 +22,10 @@ echo "Installing gruvbox color scheme for vim"
 mkdir -p .vim/colors
 wget -q https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim -O .vim/colors/gruvbox.vim
 echo "Done"
+
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Create symlink to plugin file
+cd ~/.vim/
+cp -vs $path/plugins.vim .

@@ -6,6 +6,9 @@
 " Contact: http://tberg.dk
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Load plugins
+source ~/.vim/plugins.vim
+
 " Basics
 set spell           " Spell check
 set spelllang=en_us " American English
@@ -95,6 +98,8 @@ autocmd Filetype tex set wrap linebreak nolist textwidth=0 wrapmargin=0 formatop
 :inoremap <C-H> <C-\><C-O>b
 :inoremap <C-L> <C-\><C-O>w
 
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 " Remove trailing whitespaces on saving
 fun! <SID>StripTrailingWhitespaces()
