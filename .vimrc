@@ -89,7 +89,7 @@ autocmd Filetype tex set wrap linebreak nolist textwidth=0 wrapmargin=0 formatop
 
 " Key mappings
 " Go to first tab on tg, like gt goes to next tab
-:nmap tg :tabfirst<Enter>
+:nmap tg :tabprevious<Enter>
 " Jump by paragraph with a Danish keyboard layout
 :nmap å {
 :nmap ø }
