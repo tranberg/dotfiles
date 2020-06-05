@@ -21,11 +21,11 @@ set wildmenu        " Show the wild menu
 set showmatch       " Show matching brackets
 
 
-" Colors!
-set t_Co=256        " 265 colors
-syntax enable       " Enable syntax highlighting
-colo gruvbox        " Color scheme
-" Requires installation of gruvbox, see: https://github.com/morhetz/gruvbox
+" gruvbox color scheme
+syntax enable                           " Enable syntax highlighting
+let g:gruvbox_guisp_fallback = "bg"     " Fix spell checking highlight
+let g:gruvbox_contrast_dark = "hard"    " Set contrast
+colo gruvbox                            " Select gruvbox
 " Type :colo <tab> for a selection of built-in color schemes.
 
 " Fixing colors in gruvbox
